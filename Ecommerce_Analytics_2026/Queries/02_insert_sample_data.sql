@@ -87,3 +87,15 @@ INSERT INTO payments VALUES
 (13, 1013, '2026-05-02', 52000, 'Card', 'Paid'),
 (14, 1014, '2026-05-10', 8000, 'UPI', 'Refunded'),
 (15, 1015, '2026-05-15', 16600, 'UPI', 'Paid');
+
+-- Verify the inserted row counts:
+SELECT 'customers' AS TableName, COUNT(*) AS TotalRows
+FROM customers
+UNION ALL
+SELECT 'products', COUNT(*) FROM products
+UNION ALL
+SELECT 'orders', COUNT(*) FROM orders
+UNION ALL
+SELECT 'order_items', COUNT(*) FROM order_items
+UNION ALL
+SELECT 'payments', COUNT(*) FROM payments;
